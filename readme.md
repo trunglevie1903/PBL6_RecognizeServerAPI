@@ -1,26 +1,28 @@
 # README.MD
 
-## Current Status
+## Current Status /  Tình trạng hiện tại
 
-- Lỗi phần code nhận diện
+- Đã fix lỗi phần nhận diện, có thể triển khai thử nghiệm.
 
-## Error Logs
+## Manual / Hướng dẫn
+
+- Tạo file **.env** ở folder chứa file **manage.py**.  
+- Thêm nội dung vào file **.env**.  
 
 ```txt
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-December 06, 2022 - 09:28:41
-Django version 4.0.6, using settings 'demo.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CTRL-BREAK.
-Got the recognize route.
-()
-Error: OpenCV(4.5.5) :-1: error: (-5:Bad argument) in function 'imwrite'
-> Overload resolution failed:
->  - img data type = 17 is not supported
->  - Expected Ptr<cv::UMat> for argument 'img'
-
-[06/Dec/2022 09:28:51] "POST /leafrecog HTTP/1.1" 200 2
+DB_ENGINE=__your database engine__
+DB_NAME=__your database name__
+DB_USERNAME=__your database username__
+DB_PASSWORD=__your database password
+DB_HOST=__your database host__
+DB_PORT=__your database port__
 ```
+
+- Mở terminal / command prompt ở folder chứa project.  
+- Gõ  
+
+> python manage.py runserver  
+
+## Contact if having problems / Liên hệ nếu có vấn đề
+
+Cập nhật sau.

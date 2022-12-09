@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import dotenv_values
 import os
+from os.path import join, dirname
+
+config = dotenv_values('.env')
+# print(f'Config: {config}')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,12 +84,12 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.' + config['DB_ENGINE'],
+        'NAME': config['DB_NAME'],
+        'USER': config['DB_USERNAME'],
+        'PASSWORD': config['DB_PASSWORD'],
+        'HOST': config['DB_HOST'],
+        'PORT': config['DB_PORT'],
     }
 }
 
