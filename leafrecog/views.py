@@ -10,6 +10,7 @@ import os
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
+# from tensorflow.keras.utils.data_utils import get_file
 tf.get_logger().setLevel('ERROR')
 from PIL import Image
 import uuid
@@ -20,8 +21,11 @@ def load_file(path):
     file.close()
     return content
 
-model = load_model('leafrecog/model.h5')
-class_file_path = 'leafrecog/class_list.txt'
+# def load_model_from_url(url):
+
+
+model = load_model('leafrecog/new_model.h5')
+class_file_path = 'leafrecog/new_class_list.txt'
 content = load_file(class_file_path)
 
 def load_and_preprocess_image(pathToImage):
